@@ -1,52 +1,71 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Disclosure } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/outline'
-
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    id: 1,
+    question: "Wen launch ?",
+    answer: "We don't know yet",
+  },
+  {
+    id: 2,
+    question: "On what plateform ?",
+    answer: "Solana",
+  },
+  {
+    id: 3,
+    question: "How much each mint ?",
+    answer: "1 SOL",
+  },
+  {
+    id: 4,
+    question: "How many Degen Beavers will exist?",
+    answer: "3333",
+  },
+  {
+    id: 5,
+    question: "How much royalties I pay on second market ?",
+    answer: "5% Total. 2.5% to the team and 2.5% to the Degen Beavers community wallet",
+  },
+  {
+    id: 6,
+    question: "What are you going to do with the money in the community wallet",
+    answer: "Our goal is to create a strong community implicated for the good of the community. Our plan is to create a DAO where Beavers Lodge member's can vote on how to achieve that. We will also be investing in the project by investing in our systems.",
+  },
+  {
+    id: 7,
+    question: "blabla ?",
+    answer: "blablabla",
+  },
+  {
+    id: 8,
+    question: "blabla ?",
+    answer: "blablabla",
   },
   // More questions...
-]
+];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Example() {
+export default function FAQSection() {
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-          <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">Frequently asked questions</h2>
-          <dl className="mt-6 space-y-6 divide-y divide-gray-200">
+    <div className="bg-gray-800 rounded-md">
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div className="lg:max-w-2xl lg:mx-auto lg:text-center">
+          <h2 className="text-8xl font-extrabold tracking-tight text-white sm:text-7xl font-mouseMemoire">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-3xl mt-4 text-gray-400 font-mouseMemoire">
+            Here's we hope all the answers to your questions !
+          </p>
+        </div>
+        <div className="mt-20">
+          <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10">
             {faqs.map((faq) => (
-              <Disclosure as="div" key={faq.question} className="pt-6">
-                {({ open }) => (
-                  <>
-                    <dt className="text-lg">
-                      <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
-                        <span className="font-medium text-gray-900">{faq.question}</span>
-                        <span className="ml-6 h-7 flex items-center">
-                          <ChevronDownIcon
-                            className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
-                            aria-hidden="true"
-                          />
-                        </span>
-                      </Disclosure.Button>
-                    </dt>
-                    <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                      <p className="text-base text-gray-500">{faq.answer}</p>
-                    </Disclosure.Panel>
-                  </>
-                )}
-              </Disclosure>
+              <div key={faq.id}>
+                <dt className="font-semibold text-xl text-white font-mohave">{faq.question}</dt>
+                <dd className="mt-3 text-xl text-gray-400 font-mohave">{faq.answer}</dd>
+              </div>
             ))}
           </dl>
         </div>
       </div>
     </div>
-  )
+  );
 }

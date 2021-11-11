@@ -24,7 +24,13 @@ module.exports = {
         blue : {
           450: '#5F99F7'
         }
-      }
+      },
+      fontFamily: {
+        balsamiq: "'Balsamiq Sans', cursive",
+        mouseMemoire: "'Mouse Memoirs', sans-serif",
+        comfortaa: "'Comfortaa', cursive",
+        mohave: "'Mohave', sans-serif"
+      },
     },
   },
   variants: {
